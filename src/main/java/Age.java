@@ -22,6 +22,7 @@ public class Age {
     }
 
     //Methods
+    @SuppressWarnings("unused")
     private int getAge() {
         return age;
     }

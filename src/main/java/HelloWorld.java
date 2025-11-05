@@ -18,6 +18,9 @@ public class HelloWorld {
         user_name = keyIn.nextLine();
 
         // Print Hello to the user
-        System.out.println("Hello " + user_name + "!");
+        System.out.println("Hello " + user_name + "! Hope you are having a great day!");
+
+        // Close the scanner
+        keyIn.close();
     }
 }
