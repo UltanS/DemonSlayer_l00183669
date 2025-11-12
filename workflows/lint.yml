@@ -1,0 +1,44 @@
+name: Java Checkstyle Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checkstyle:
+    name: Run Checkstyle
+    runs-on: ubuntu-latest
+
+    steps:
+			# step1: checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+			# step2: setup JDK 21
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'oracle'
+
+			# step3: download and run checkstyle
+      - name: Download Checkstyle
+        run: |
+          curl -L -o checkstyle.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.18.1/checkstyle-10.18.1-all.jar
+      
+			# step4: download Google Style XML
+      - name: Download Google Style XML
+        run: |
+          curl -L -o google_checks.xml https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml
+
+      # step5: run checkstyle
+      - name: Run Checkstyle
+        run: |
+          java -jar checkstyle.jar -c google_checks.xml -r src || true
+
+# What does this file do
+#-----------------------
+# this is a github action workflow that runs checkstyle linter on java code.
+# it downloads the checkstyle.
+# it uses google's Java style rules.
+# it reports the results in the actions tab on github.
