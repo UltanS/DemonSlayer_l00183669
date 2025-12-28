@@ -1,4 +1,3 @@
-package main.java;
 /*
  * Name: Ultan Sweeney
  * Student ID: l00183669
