@@ -38,6 +38,27 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <!-- Where the generated HTML docs go -->
+          <outputDirectory>${project.basedir}/docs/javadoc</outputDirectory>
+
+          <!-- Defaults -->
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <docencoding>${project.build.sourceEncoding}</docencoding>
+          <charset>${project.build.sourceEncoding}</charset>
+
+          <!-- Avoid failing builds on strict doclint -->
+          <additionalOptions>
+            <additionalOption>-Xdoclint:none</additionalOption>
+          </additionalOptions>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
+
