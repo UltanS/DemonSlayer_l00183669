@@ -1,4 +1,4 @@
-name: Generaye Javadoc
+name: Generate Javadoc
 
 on:
   push:
@@ -17,7 +17,8 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'oracle'
+          distribution: 'temurin'
+          cache: maven
 
       - name: Generate Javadoc
         run: |
@@ -26,4 +27,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: javadoc
-          path: docs
+          path: target/site/apidocs
