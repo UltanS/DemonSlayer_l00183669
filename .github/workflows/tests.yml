@@ -20,7 +20,14 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-
-      # Run Maven unit tests
-      - name: Run unit tests
-        run: mvn test
+          
+      # build, run unit test and package the jar
+      - name: Build package
+        run: mvn -q package
+        
+      # upload the packaged jar as a downloadable artifact
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonSlayerJar
+          path: target/*.jar
