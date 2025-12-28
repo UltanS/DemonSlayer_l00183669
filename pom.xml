@@ -3,7 +3,7 @@
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
                                https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <!-- Maven model version -->
-  <modelVersion>4.0.0</modelVersion
+  <modelVersion>4.0.0</modelVersion>
          
   <!-- Project coordinates -->
   <groupId>ie.ultan</groupId>
@@ -38,4 +38,5 @@
       <version>3.2.5</version>
     </plugins>
   </build>
+
 
