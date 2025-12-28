@@ -1,0 +1,15 @@
+<configuration>
+  <!-- this sendss log output to the console -->
+  <appender name = "CONSOLE" class = "ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!-- defining how the log messages are formatted -->
+      <pattern>%d{HH:mm:ss} %-5level %logger - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- root logger, info level means INFO, WARN and ERROR messages are logged -->
+  <root level = "INFO">
+    <!-- Attatch the console appender to the root logger to display all log messages to the console -->
+    <appender-ref ref = "CONSOLE"/>
+  </root>
+</configuration>
