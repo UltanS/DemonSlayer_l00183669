@@ -1,5 +1,3 @@
-package test.java;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -12,28 +10,28 @@ public class AgeUnitTest {
 
     @Test 
     public void testChildAgeCategory() {
-        assertEquals("Child", new main.java.Age(10).getAgeCategory());
+        assertEquals("Child", new Age(10).getAgeCategory());
     }
 
     @Test
     public void testTeenAgeCategory() {
-        assertEquals("Teen", new main.java.Age(15).getAgeCategory());
+        assertEquals("Teen", new Age(15).getAgeCategory());
     }
 
     @Test
     public void testAdultAgeCategory() {
-        assertEquals("Adult", new main.java.Age(30).getAgeCategory());
+        assertEquals("Adult", new Age(30).getAgeCategory());
     }
 
     @Test
     public void testSeniorAgeCategory() {
-        assertEquals("Senior", new main.java.Age(70).getAgeCategory());
+        assertEquals("Senior", new Age(70).getAgeCategory());
     }
 
     @Test
     public void testNegativeAgeThrowsException() {
         try {
-            new main.java.Age(-5);
+            new Age(-5);
             fail("Expected IllegalArgumentException for negative age");
         } catch (IllegalArgumentException e) {
             assertEquals("ERROR - Age cannot be negative.", e.getMessage());
@@ -43,7 +41,7 @@ public class AgeUnitTest {
     @Test
     public void testUnrealisticAgeThrowsException() {
         try {
-            new main.java.Age(150);
+            new Age(150);
             fail("Expected IllegalArgumentException for unrealistic age");
         } catch (IllegalArgumentException e) {
             assertEquals("ERROR - age seems unrealistic (greater than 130).", e.getMessage());
