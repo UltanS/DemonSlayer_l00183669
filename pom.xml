@@ -5,8 +5,26 @@
   <!-- Maven model version -->
   <modelVersion>4.0.0</modelVersion
          
-
   <!-- Project coordinates -->
   <groupId>ie.ultan</groupId>
   <artifactId>demon-slayer</artifactId>
   <version>1.0.0</version>
+
+  <!-- Project properties -->
+  <properties>
+    <!-- Java version -->
+    <maven.compiler.release>21</maven.compiler.release>
+    <!-- Character encoding -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- Dependencies, external libraries required for the project -->
+  <dependencies>
+    <!-- junit -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version></version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
