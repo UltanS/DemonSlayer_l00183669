@@ -17,7 +17,7 @@ public class Age {
     private final int CHILD_MAX_AGE = 12;
     private final int TEEN_MAX_AGE = 19;
     private final int ADULT_MAX_AGE = 64;
-    private static final Logger LOGGER = LoggerFactory.getLogger(Age.class);
+    private static final Logger logger = LoggerFactory.getLogger(Age.class);
 
     //Constructors
     public Age(int age) {
