@@ -1,0 +1,23 @@
+name: Java Unit Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubunto-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/checkout@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Run unit tests
+        run: mvn test
+          
